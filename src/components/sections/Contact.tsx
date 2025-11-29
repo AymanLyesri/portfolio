@@ -3,7 +3,7 @@
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionHeader from "@/components/SectionHeader";
 import { SocialLink } from "@/types/portfolio";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
 interface ContactProps {
   email: string;
@@ -28,35 +28,39 @@ const iconMap: Record<string, React.ReactElement> = {
   ),
 };
 
+const socialColors: Record<
+  string,
+  { gradient: string; shadow: string; hover: string }
+> = {
+  github: {
+    gradient: "from-gray-600 to-gray-800",
+    shadow: "shadow-gray-500/50",
+    hover: "hover:from-gray-500 hover:to-gray-700",
+  },
+  linkedin: {
+    gradient: "from-blue-600 to-blue-800",
+    shadow: "shadow-blue-500/50",
+    hover: "hover:from-blue-500 hover:to-blue-700",
+  },
+  twitter: {
+    gradient: "from-sky-500 to-blue-600",
+    shadow: "shadow-sky-500/50",
+    hover: "hover:from-sky-400 hover:to-blue-500",
+  },
+};
+
 export default function Contact({ email, socialLinks }: ContactProps) {
-  const cardRef = useRef<HTMLDivElement>(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [emailCopied, setEmailCopied] = useState(false);
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!cardRef.current) return;
-      const rect = cardRef.current.getBoundingClientRect();
-      setMousePosition({
-        x: e.clientX - rect.left,
-        y: e.clientY - rect.top,
-      });
-    };
-
-    const card = cardRef.current;
-    if (card) {
-      card.addEventListener("mousemove", handleMouseMove);
-    }
-
-    return () => {
-      if (card) {
-        card.removeEventListener("mousemove", handleMouseMove);
-      }
-    };
-  }, []);
+  const copyEmail = () => {
+    navigator.clipboard.writeText(email);
+    setEmailCopied(true);
+    setTimeout(() => setEmailCopied(false), 2000);
+  };
 
   return (
-    <section id="contact" className=" px-6 flex justify-center">
-      <div className="w-full max-w-4xl">
+    <section id="contact" className="px-6 flex justify-center pb-20">
+      <div className="w-full max-w-5xl">
         <AnimatedSection>
           <SectionHeader
             title="Get In Touch"
@@ -64,60 +68,205 @@ export default function Contact({ email, socialLinks }: ContactProps) {
           />
         </AnimatedSection>
 
-        <AnimatedSection delay={200}>
-          <div
-            ref={cardRef}
-            className="group relative bg-black/40 backdrop-blur-sm border border-white/10 rounded-lg p-10 hover:border-white/30 hover:bg-black/60 transition-all duration-300 overflow-hidden"
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
+          {/* Contact Card */}
+          <AnimatedSection
+            delay={200}
+            hover="spotlight"
+            className="relative bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 overflow-hidden"
           >
-            {/* Spotlight effect */}
-            <div
-              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-              style={{
-                background: `radial-gradient(400px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 255, 255, 0.1), transparent 40%)`,
-              }}
-            />
-            <div className="relative text-center mb-8">
-              <p className="text-sm text-gray-300 mb-6">
-                I'm always open to discussing new projects, creative ideas, or
-                opportunities to be part of your vision.
-              </p>
-              <a
-                href={`mailto:${email}`}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black text-sm font-medium rounded hover:bg-gray-200 transition-all duration-300"
-              >
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
-                {email}
-              </a>
-            </div>
+            <div className="relative">
+              {/* Decorative Icon */}
+              <div className="mb-6">
+                <div className="inline-flex p-4 bg-white/10 rounded-2xl backdrop-blur-sm">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                </div>
+              </div>
 
-            <div className="flex justify-center gap-6 pt-6 border-t border-white/10">
-              {socialLinks.map((link) => (
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Ready to Start a Project?
+              </h3>
+              <p className="text-gray-300 mb-8 leading-relaxed">
+                I'm always open to discussing new projects, creative ideas, or
+                opportunities to collaborate on innovative solutions.
+              </p>
+
+              {/* Email Button */}
+              <div className="space-y-4">
                 <a
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group/icon text-gray-400 hover:text-white transition-all duration-300"
-                  aria-label={link.name}
+                  href={`mailto:${email}`}
+                  className="group flex items-center gap-3 px-6 py-4 bg-white text-black rounded-xl font-medium hover:bg-gray-100 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-white/20"
                 >
-                  {iconMap[link.icon] || iconMap.github}
+                  <svg
+                    className="w-5 h-5 group-hover:rotate-12 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                  <span className="flex-1 text-left">{email}</span>
+                  <svg
+                    className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
                 </a>
-              ))}
+
+                <button
+                  onClick={copyEmail}
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-white/5 text-white rounded-xl font-medium border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+                >
+                  {emailCopied ? (
+                    <>
+                      <svg
+                        className="w-5 h-5 text-green-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      <span className="text-green-400">Copied!</span>
+                    </>
+                  ) : (
+                    <>
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                        />
+                      </svg>
+                      <span>Copy Email</span>
+                    </>
+                  )}
+                </button>
+              </div>
             </div>
-          </div>
-        </AnimatedSection>
+          </AnimatedSection>
+
+          {/* Social Links Card */}
+          <AnimatedSection
+            delay={300}
+            hover="glow"
+            className="relative bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-orange-500/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 overflow-hidden"
+          >
+            <div className="relative">
+              {/* Decorative Icon */}
+              <div className="mb-6">
+                <div className="inline-flex p-4 bg-white/10 rounded-2xl backdrop-blur-sm">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Connect With Me
+              </h3>
+              <p className="text-gray-300 mb-8 leading-relaxed">
+                Follow me on social media for updates on my latest projects and
+                tech insights.
+              </p>
+
+              {/* Social Links */}
+              <div className="space-y-4 gap-4 flex flex-col">
+                {socialLinks.map((link, index) => {
+                  const colors = socialColors[link.icon] || socialColors.github;
+                  return (
+                    <AnimatedSection key={link.name} delay={400 + index * 100}>
+                      <a
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`group flex items-center gap-4 px-6 py-4 bg-gradient-to-r ${colors.gradient} ${colors.hover} rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-xl ${colors.shadow}`}
+                      >
+                        <div className="group-hover:scale-110 transition-transform text-white">
+                          {iconMap[link.icon] || iconMap.github}
+                        </div>
+                        <div className="flex-1">
+                          <p className="text-white font-semibold">
+                            {link.name}
+                          </p>
+                          <p className="text-white/70 text-sm">
+                            @{link.url.split("/").pop()}
+                          </p>
+                        </div>
+                        <svg
+                          className="w-5 h-5 text-white/50 group-hover:text-white group-hover:translate-x-1 transition-all"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"
+                          />
+                        </svg>
+                      </a>
+                    </AnimatedSection>
+                  );
+                })}
+              </div>
+
+              {/* Additional Info */}
+              <div className="mt-8 pt-8 border-t border-white/10">
+                <p className="text-sm text-gray-400 text-center">
+                  Response time: Usually within 24 hours
+                </p>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
       </div>
     </section>
   );

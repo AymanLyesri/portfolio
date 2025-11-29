@@ -32,7 +32,7 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <footer className="py-8 px-4 text-center text-gray-500 border-t border-gray-800">
+      <footer className="mt-64 py-8 px-4 text-center text-gray-500 border-t border-gray-800">
         <p>
           © {new Date().getFullYear()} {portfolioData.hero.name}. All rights
           reserved.
