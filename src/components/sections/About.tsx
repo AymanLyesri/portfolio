@@ -56,9 +56,31 @@ export default function About({ bio }: AboutProps) {
                 background: `radial-gradient(400px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 255, 255, 0.1), transparent 40%)`,
               }}
             />
-            <p className="relative text-base text-gray-300 leading-relaxed">
-              {bio}
-            </p>
+            <div className="relative space-y-4">
+              {bio.split(". ").map((sentence, idx) => {
+                // Group sentences into paragraphs (approximately 3-4 sentences each)
+                const sentencesPerParagraph = 3;
+                const paragraphIndex = Math.floor(idx / sentencesPerParagraph);
+                const isFirstInParagraph = idx % sentencesPerParagraph === 0;
+
+                if (!isFirstInParagraph) return null;
+
+                const paragraphSentences = bio
+                  .split(". ")
+                  .slice(idx, idx + sentencesPerParagraph)
+                  .join(". ");
+
+                return (
+                  <p
+                    key={idx}
+                    className="text-base text-gray-300 leading-relaxed"
+                  >
+                    {paragraphSentences}
+                    {!paragraphSentences.endsWith(".") ? "." : ""}
+                  </p>
+                );
+              })}
+            </div>
           </div>
         </AnimatedSection>
       </div>

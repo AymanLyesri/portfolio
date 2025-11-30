@@ -12,6 +12,7 @@ interface WorkItemCardProps {
 
 export default function WorkItemCard({ item, type }: WorkItemCardProps) {
   const [showReadme, setShowReadme] = useState(false);
+  const [showAllQuotes, setShowAllQuotes] = useState(false);
 
   return (
     <AnimatedSection
@@ -55,6 +56,82 @@ export default function WorkItemCard({ item, type }: WorkItemCardProps) {
             </li>
           ))}
         </ul>
+      )}
+
+      {item.quotes && item.quotes.length > 0 && (
+        <div className="relative mb-6 space-y-4">
+          {item.quotes
+            .slice(0, showAllQuotes ? item.quotes.length : 2)
+            .map((testimonial, idx) => (
+              <div
+                key={idx}
+                className="p-4 bg-white/5 border-l-4 border-white/30 rounded-r-lg"
+              >
+                <svg
+                  className="w-6 h-6 text-white/20 mb-2"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                </svg>
+                <p className="text-gray-300 italic text-sm leading-relaxed mb-3">
+                  "{testimonial.quote}"
+                </p>
+                <div className="flex flex-col">
+                  <span className="text-white font-medium text-sm">
+                    {testimonial.name}
+                  </span>
+                  <span className="text-gray-400 text-xs">
+                    {testimonial.role}
+                  </span>
+                </div>
+              </div>
+            ))}
+          {item.quotes.length > 2 && (
+            <div className="flex justify-center">
+              <button
+                onClick={() => setShowAllQuotes(!showAllQuotes)}
+                className="text-xs text-gray-400 hover:text-white transition-colors flex items-center gap-1.5 px-4 py-2 bg-white/5 rounded border border-white/10 hover:bg-white/10"
+              >
+                {showAllQuotes ? (
+                  <>
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 15l7-7 7 7"
+                      />
+                    </svg>
+                    Show Less
+                  </>
+                ) : (
+                  <>
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                    Show More ({item.quotes.length - 2} more)
+                  </>
+                )}
+              </button>
+            </div>
+          )}
+        </div>
       )}
 
       <div className="relative flex flex-wrap gap-2 mb-6">

@@ -13,6 +13,11 @@ export interface WorkItem {
   highlights?: string[];
   stars?: number;
   readme?: string;
+  quotes?: {
+    quote: string;
+    name: string;
+    role: string;
+  }[];
 }
 
 export interface Skill {

@@ -9,7 +9,7 @@ export const portfolioData: PortfolioData = {
   },
 
   about: {
-    bio: "I'm a motivated software engineer with experience across frontend, backend, and mobile development. I’ve worked in Agile and Scrum environments, contributing to cross-platform apps, Angular dashboards, REST APIs, and full-stack personal projects. I enjoy building practical, user-focused solutions and constantly exploring new technologies.",
+    bio: "I’m a software engineer who enjoys building things that feel fast, intuitive, and reliable. Over the years, I’ve worked across mobile, frontend, and backend development—creating cross-platform apps with React Native, designing Angular dashboards, and building REST APIs and full-stack projects with TypeScript, Node.js, and Python. I’ve had the chance to work with teams in France and Morocco, contributing to Agile sprints, improving performance, integrating backend services, and delivering polished UI/UX across different platforms. On the freelance side, I’ve built custom applications for clients worldwide and maintained a consistent record of high ratings and strong communication. A big part of my journey is open source. I enjoy crafting tools, widgets, and Linux configurations that help developers customize their workflow—some of which are widely used in the community. I’m always exploring new technologies, optimizing how things work under the hood, and pushing myself to build better, cleaner systems. At the end of the day, I’m driven by solving real problems, creating smooth user experiences, and learning something new with every project.",
   },
 
   experiences: [
@@ -35,6 +35,14 @@ export const portfolioData: PortfolioData = {
         "Improved app load times by 30% with reusable components",
         "Integrated backend services and third-party APIs",
         "Participated in Agile sprints and code reviews",
+      ],
+      quotes: [
+        {
+          quote:
+            "Monsieur LYESRI Ayman a été d'une aide précieuse et a fourni un travail de qualité",
+          name: "Berniche NGOMA",
+          role: "CEO, VNB-IT",
+        },
       ],
     },
     {
@@ -79,6 +87,31 @@ export const portfolioData: PortfolioData = {
         "Delivered fully responsive, dynamic web apps for clients worldwide",
         "Built C++ applications tailored to client needs",
         "Maintained a perfect 5⭐ rating",
+      ],
+      quotes: [
+        {
+          quote:
+            "Good job, great communication and quick delivery. I am second time customer. I can approve Ayman for 100%. Great work, as we agreed, fixes done in minutes",
+          name: "Michal GALECKI",
+          role: "Client on Fiverr",
+        },
+        {
+          quote:
+            "Great job, very detailed, happy about the front end. Know his work very well. Will come back. Thank You Ayman",
+          name: "Michal GALECKI",
+          role: "Client on Fiverr",
+        },
+        {
+          quote:
+            "Excellent seller, perfect communication and updates during the work period.",
+          name: "Cherif KHALIFAH",
+          role: "Client on Fiverr",
+        },
+        {
+          quote: "Rapide efficace , je recommande les yeux fermé :)",
+          name: "valentinrizz165",
+          role: "Client on Fiverr",
+        },
       ],
     },
     {
