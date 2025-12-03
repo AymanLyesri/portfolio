@@ -14,7 +14,7 @@ export default function SkillBadge({ skill }: SkillBadgeProps) {
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group relative px-3 py-1.5 bg-black/40 backdrop-blur-sm border border-white/20 rounded-lg text-sm font-medium text-gray-200 hover:bg-white hover:text-black hover:border-white hover:shadow-lg hover:shadow-white/20 transition-all duration-300 cursor-default"
+      className="group relative px-3 py-1.5 bg-black/40 border border-white/20 rounded-lg text-sm font-medium text-gray-200 hover:bg-white hover:text-black hover:border-white hover:shadow-lg hover:shadow-white/20 transition-all duration-300 cursor-default"
     >
       {/* Shine effect */}
       {isHovered && (

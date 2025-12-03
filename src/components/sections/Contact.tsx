@@ -78,7 +78,7 @@ export default function Contact({ email, socialLinks }: ContactProps) {
             <div className="relative">
               {/* Decorative Icon */}
               <div className="mb-6">
-                <div className="inline-flex p-4 bg-white/10 rounded-2xl backdrop-blur-sm">
+                <div className="inline-flex p-4 bg-white/10 rounded-2xl">
                   <svg
                     className="w-8 h-8 text-white"
                     fill="none"
@@ -191,7 +191,7 @@ export default function Contact({ email, socialLinks }: ContactProps) {
             <div className="relative">
               {/* Decorative Icon */}
               <div className="mb-6">
-                <div className="inline-flex p-4 bg-white/10 rounded-2xl backdrop-blur-sm">
+                <div className="inline-flex p-4 bg-white/10 rounded-2xl">
                   <svg
                     className="w-8 h-8 text-white"
                     fill="none"

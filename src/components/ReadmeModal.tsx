@@ -62,7 +62,7 @@ export default function ReadmeModal({
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="sticky top-0 z-20 flex items-center justify-between px-8 py-5 bg-[#0d1117]/98 backdrop-blur-md border-b border-[#30363d]">
+        <div className="sticky top-0 z-20 flex items-center justify-between px-8 py-5 bg-[#0d1117]/98 border-b border-[#30363d]">
           <div className="flex items-center gap-3">
             <svg
               className="w-6 h-6 text-gray-400"
