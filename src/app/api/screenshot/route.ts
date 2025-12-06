@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getScreenshotService } from "@/services/screenshot";
+import { takeScreenshot } from "@/services/screenshot";
 
 export async function POST(request: NextRequest) {
   try {
@@ -10,9 +10,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "URL is required" }, { status: 400 });
     }
 
-    const screenshotService = getScreenshotService();
-
-    const screenshot = await screenshotService.takeScreenshot({
+    const screenshot = await takeScreenshot({
       url,
       fullPage: fullPage ?? true,
       width: width ?? 1920,
@@ -65,10 +63,8 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    console.log("[API] Getting screenshot service...");
-    const screenshotService = getScreenshotService();
-
-    const screenshot = await screenshotService.takeScreenshot({
+    console.log("[API] Taking screenshot...");
+    const screenshot = await takeScreenshot({
       url,
       fullPage: searchParams.get("fullPage") !== "false",
       width: parseInt(searchParams.get("width") || "1280"),
