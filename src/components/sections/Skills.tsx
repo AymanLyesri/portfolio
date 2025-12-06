@@ -161,7 +161,7 @@ export default function Skills({ skills }: SkillsProps) {
     : groupedSkills;
 
   return (
-    <section id="skills" className="px-6 flex justify-center">
+    <section id="skills" className="py-20 px-6 flex justify-center">
       <div className="w-full max-w-6xl">
         <AnimatedSection>
           <SectionHeader

@@ -9,7 +9,7 @@ interface ExperienceProps {
 
 export default function Experience({ experiences }: ExperienceProps) {
   return (
-    <section id="experience" className=" px-6 flex justify-center">
+    <section id="experience" className="py-20 px-6 flex justify-center">
       <div className="w-full max-w-6xl">
         <AnimatedSection>
           <SectionHeader

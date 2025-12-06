@@ -35,7 +35,7 @@ export default function About({ bio }: AboutProps) {
   }, []);
 
   return (
-    <section id="about" className="px-6 flex justify-center">
+    <section id="about" className="py-20 px-6 flex justify-center">
       <div className="w-full max-w-4xl">
         <AnimatedSection>
           <SectionHeader

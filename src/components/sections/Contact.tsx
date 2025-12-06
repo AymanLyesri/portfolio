@@ -59,7 +59,7 @@ export default function Contact({ email, socialLinks }: ContactProps) {
   };
 
   return (
-    <section id="contact" className="px-6 flex justify-center pb-20">
+    <section id="contact" className="py-20 px-6 flex justify-center pb-20">
       <div className="w-full max-w-5xl">
         <AnimatedSection>
           <SectionHeader

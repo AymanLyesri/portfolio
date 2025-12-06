@@ -4,6 +4,7 @@ import { WorkItem } from "@/types/portfolio";
 import { useState } from "react";
 import ReadmeModal from "./ReadmeModal";
 import AnimatedSection from "./AnimatedSection";
+import ProjectScreenshot from "./ProjectScreenshot";
 
 interface WorkItemCardProps {
   item: WorkItem;
@@ -19,6 +20,11 @@ export default function WorkItemCard({ item, type }: WorkItemCardProps) {
       hover="spotlight"
       className="relative bg-black/40 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover:border-white/30 hover:bg-black/60 transition-all duration-300 overflow-hidden"
     >
+      {/* Project Screenshot Preview - Only for projects with live URLs */}
+      {type === "project" && item.liveUrl && (
+        <ProjectScreenshot url={item.liveUrl} projectTitle={item.title} />
+      )}
+
       <div className="relative flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
         <div className="flex-1">
           <div className="flex items-center gap-3 mb-2">

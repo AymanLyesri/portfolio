@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Masonry from "react-masonry-css";
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionHeader from "@/components/SectionHeader";
 import WorkItemCard from "@/components/WorkItemCard";
@@ -81,13 +82,22 @@ export default function Projects({ projects }: ProjectsProps) {
           </div>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <Masonry
+          breakpointCols={{
+            default: 2,
+            768: 1,
+          }}
+          className="flex -ml-6 w-auto"
+          columnClassName="pl-6 bg-clip-padding"
+        >
           {enrichedProjects.map((project, index) => (
-            <AnimatedSection key={project.id} delay={index * 100}>
-              <WorkItemCard item={project} type="project" />
-            </AnimatedSection>
+            <div key={project.id} className="mb-6">
+              <AnimatedSection delay={index * 100}>
+                <WorkItemCard item={project} type="project" />
+              </AnimatedSection>
+            </div>
           ))}
-        </div>
+        </Masonry>
       </div>
     </section>
   );
