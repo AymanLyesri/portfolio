@@ -3,6 +3,7 @@
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionHeader from "@/components/SectionHeader";
 import { SocialLink } from "@/types/portfolio";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 
 interface ContactProps {
@@ -50,6 +51,7 @@ const socialColors: Record<
 };
 
 export default function Contact({ email, socialLinks }: ContactProps) {
+  const t = useTranslations("contact");
   const [emailCopied, setEmailCopied] = useState(false);
 
   const copyEmail = () => {
@@ -62,10 +64,7 @@ export default function Contact({ email, socialLinks }: ContactProps) {
     <section id="contact" className="py-20 px-6 flex justify-center pb-20">
       <div className="w-full max-w-5xl">
         <AnimatedSection>
-          <SectionHeader
-            title="Get In Touch"
-            subtitle="Let's work together on something great"
-          />
+          <SectionHeader title={t("title")} subtitle="" />
         </AnimatedSection>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
@@ -96,11 +95,10 @@ export default function Contact({ email, socialLinks }: ContactProps) {
               </div>
 
               <h3 className="text-2xl font-bold text-white mb-4">
-                Ready to Start a Project?
+                {t("readyToStart")}
               </h3>
               <p className="text-gray-300 mb-8 leading-relaxed">
-                I'm always open to discussing new projects, creative ideas, or
-                opportunities to collaborate on innovative solutions.
+                {t("description")}
               </p>
 
               {/* Email Button */}
@@ -157,7 +155,7 @@ export default function Contact({ email, socialLinks }: ContactProps) {
                           d="M5 13l4 4L19 7"
                         />
                       </svg>
-                      <span className="text-green-400">Copied!</span>
+                      <span className="text-green-400">{t("copied")}</span>
                     </>
                   ) : (
                     <>
@@ -174,7 +172,7 @@ export default function Contact({ email, socialLinks }: ContactProps) {
                           d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
                         />
                       </svg>
-                      <span>Copy Email</span>
+                      <span>{t("copyEmail")}</span>
                     </>
                   )}
                 </button>
@@ -209,11 +207,10 @@ export default function Contact({ email, socialLinks }: ContactProps) {
               </div>
 
               <h3 className="text-2xl font-bold text-white mb-4">
-                Connect With Me
+                {t("connectOnSocial")}
               </h3>
               <p className="text-gray-300 mb-8 leading-relaxed">
-                Follow me on social media for updates on my latest projects and
-                tech insights.
+                {t("followText")}
               </p>
 
               {/* Social Links */}
@@ -261,7 +258,7 @@ export default function Contact({ email, socialLinks }: ContactProps) {
               {/* Additional Info */}
               <div className="mt-8 pt-8 border-t border-white/10">
                 <p className="text-sm text-gray-400 text-center">
-                  Response time: Usually within 24 hours
+                  {t("responseTime")}
                 </p>
               </div>
             </div>

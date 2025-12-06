@@ -2,13 +2,11 @@
 
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionHeader from "@/components/SectionHeader";
+import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 
-interface AboutProps {
-  bio: string;
-}
-
-export default function About({ bio }: AboutProps) {
+export default function About() {
+  const t = useTranslations("about");
   const cardRef = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -38,10 +36,7 @@ export default function About({ bio }: AboutProps) {
     <section id="about" className="py-20 px-6 flex justify-center">
       <div className="w-full max-w-4xl">
         <AnimatedSection>
-          <SectionHeader
-            title="About Me"
-            subtitle="Passionate about creating impactful software solutions"
-          />
+          <SectionHeader title={t("title")} subtitle="" />
         </AnimatedSection>
 
         <AnimatedSection delay={200}>
@@ -57,29 +52,33 @@ export default function About({ bio }: AboutProps) {
               }}
             />
             <div className="relative space-y-4">
-              {bio.split(". ").map((sentence, idx) => {
-                // Group sentences into paragraphs (approximately 3-4 sentences each)
-                const sentencesPerParagraph = 3;
-                const paragraphIndex = Math.floor(idx / sentencesPerParagraph);
-                const isFirstInParagraph = idx % sentencesPerParagraph === 0;
+              {t("bio")
+                .split(". ")
+                .map((sentence, idx) => {
+                  // Group sentences into paragraphs (approximately 3-4 sentences each)
+                  const sentencesPerParagraph = 3;
+                  const paragraphIndex = Math.floor(
+                    idx / sentencesPerParagraph
+                  );
+                  const isFirstInParagraph = idx % sentencesPerParagraph === 0;
 
-                if (!isFirstInParagraph) return null;
+                  if (!isFirstInParagraph) return null;
 
-                const paragraphSentences = bio
-                  .split(". ")
-                  .slice(idx, idx + sentencesPerParagraph)
-                  .join(". ");
+                  const paragraphSentences = t("bio")
+                    .split(". ")
+                    .slice(idx, idx + sentencesPerParagraph)
+                    .join(". ");
 
-                return (
-                  <p
-                    key={idx}
-                    className="text-base text-gray-300 leading-relaxed"
-                  >
-                    {paragraphSentences}
-                    {!paragraphSentences.endsWith(".") ? "." : ""}
-                  </p>
-                );
-              })}
+                  return (
+                    <p
+                      key={idx}
+                      className="text-base text-gray-300 leading-relaxed"
+                    >
+                      {paragraphSentences}
+                      {!paragraphSentences.endsWith(".") ? "." : ""}
+                    </p>
+                  );
+                })}
             </div>
           </div>
         </AnimatedSection>

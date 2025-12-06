@@ -4,6 +4,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import SectionHeader from "@/components/SectionHeader";
 import SkillBadge from "@/components/SkillBadge";
 import { Skill } from "@/types/portfolio";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 
 interface SkillsProps {
@@ -11,6 +12,7 @@ interface SkillsProps {
 }
 
 export default function Skills({ skills }: SkillsProps) {
+  const t = useTranslations("skills");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   const groupedSkills = skills.reduce((acc, skill) => {
@@ -23,7 +25,7 @@ export default function Skills({ skills }: SkillsProps) {
 
   const categoryInfo = {
     language: {
-      label: "Languages",
+      label: t("categories.language"),
       icon: (
         <svg
           className="w-6 h-6"
@@ -44,7 +46,7 @@ export default function Skills({ skills }: SkillsProps) {
       iconColor: "text-blue-400",
     },
     framework: {
-      label: "Frameworks & Libraries",
+      label: t("categories.framework"),
       icon: (
         <svg
           className="w-6 h-6"
@@ -65,7 +67,7 @@ export default function Skills({ skills }: SkillsProps) {
       iconColor: "text-purple-400",
     },
     tool: {
-      label: "Tools & DevOps",
+      label: t("categories.tool"),
       icon: (
         <svg
           className="w-6 h-6"
@@ -92,7 +94,7 @@ export default function Skills({ skills }: SkillsProps) {
       iconColor: "text-green-400",
     },
     database: {
-      label: "Databases",
+      label: t("categories.database"),
       icon: (
         <svg
           className="w-6 h-6"
@@ -113,7 +115,7 @@ export default function Skills({ skills }: SkillsProps) {
       iconColor: "text-orange-400",
     },
     cloud: {
-      label: "Cloud & Infrastructure",
+      label: t("categories.cloud"),
       icon: (
         <svg
           className="w-6 h-6"
@@ -164,10 +166,7 @@ export default function Skills({ skills }: SkillsProps) {
     <section id="skills" className="py-20 px-6 flex justify-center">
       <div className="w-full max-w-6xl">
         <AnimatedSection>
-          <SectionHeader
-            title="Skills & Technologies"
-            subtitle="Tools and technologies I work with"
-          />
+          <SectionHeader title={t("title")} subtitle="" />
         </AnimatedSection>
 
         {/* Category Filter Pills */}
@@ -181,7 +180,7 @@ export default function Skills({ skills }: SkillsProps) {
                   : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10"
               }`}
             >
-              All Skills
+              {t("allSkills")}
             </button>
             {Object.entries(categoryInfo).map(([key, info]) => {
               if (!groupedSkills[key]) return null;

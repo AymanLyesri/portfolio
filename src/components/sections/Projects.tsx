@@ -6,12 +6,14 @@ import AnimatedSection from "@/components/AnimatedSection";
 import SectionHeader from "@/components/SectionHeader";
 import WorkItemCard from "@/components/WorkItemCard";
 import { WorkItem } from "@/types/portfolio";
+import { useTranslations } from "next-intl";
 
 interface ProjectsProps {
   projects: WorkItem[];
 }
 
 export default function Projects({ projects }: ProjectsProps) {
+  const t = useTranslations("projects");
   const [enrichedProjects, setEnrichedProjects] =
     useState<WorkItem[]>(projects);
   const [loading, setLoading] = useState(true);
@@ -69,16 +71,13 @@ export default function Projects({ projects }: ProjectsProps) {
     <section id="projects" className="py-20 px-4 flex justify-center">
       <div className="w-full max-w-6xl">
         <AnimatedSection>
-          <SectionHeader
-            title="Projects"
-            subtitle="Open-source contributions and personal projects"
-          />
+          <SectionHeader title={t("title")} subtitle="" />
         </AnimatedSection>
 
         {loading && (
           <div className="text-center py-12">
             <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-white border-r-transparent"></div>
-            <p className="mt-4 text-gray-400">Loading project details...</p>
+            <p className="mt-4 text-gray-400">{t("loading")}</p>
           </div>
         )}
 

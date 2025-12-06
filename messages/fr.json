@@ -1,0 +1,71 @@
+{
+  "nav": {
+    "about": "À propos",
+    "experience": "Expérience",
+    "projects": "Projets",
+    "skills": "Compétences",
+    "contact": "Contact",
+    "portfolio": "Portfolio",
+    "viewSource": "Voir le code source",
+    "star": "Étoile",
+    "source": "Code"
+  },
+  "hero": {
+    "name": "Ayman Lyesri",
+    "title": "Ingénieur Logiciel",
+    "subtitle": "Développeur Full-Stack & Mobile",
+    "tagline": "Création d'interfaces élégantes et de systèmes backend évolutifs",
+    "getInTouch": "Me Contacter",
+    "viewProjects": "Voir les Projets"
+  },
+  "about": {
+    "title": "À propos de moi",
+    "bio": "Je suis un ingénieur logiciel qui aime créer des choses rapides, intuitives et fiables. Au fil des années, j'ai travaillé dans le développement mobile, frontend et backend—créant des applications multiplateformes avec React Native, concevant des tableaux de bord Angular et développant des API REST et des projets full-stack avec TypeScript, Node.js et Python. J'ai eu l'opportunité de travailler avec des équipes en France et au Maroc, contribuant aux sprints Agile, améliorant les performances, intégrant des services backend et offrant une UI/UX soignée sur différentes plateformes. En tant que freelance, j'ai créé des applications personnalisées pour des clients du monde entier et maintenu une réputation constante avec d'excellentes évaluations et une communication solide. Une grande partie de mon parcours est dédiée à l'open source. J'aime créer des outils, des widgets et des configurations Linux qui aident les développeurs à personnaliser leur flux de travail—dont certains sont largement utilisés dans la communauté. J'explore constamment de nouvelles technologies, optimisant le fonctionnement des systèmes et me poussant à créer de meilleurs systèmes, plus propres. Au final, je suis motivé par la résolution de vrais problèmes, la création d'expériences utilisateur fluides et l'apprentissage de quelque chose de nouveau à chaque projet."
+  },
+  "experience": {
+    "title": "Expérience Professionnelle",
+    "highlights": "Réalisations Clés"
+  },
+  "projects": {
+    "title": "Projets en vedette",
+    "viewGithub": "Voir sur GitHub",
+    "viewLive": "Démo en direct",
+    "viewReadme": "Voir README",
+    "loading": "Chargement des détails du projet..."
+  },
+  "skills": {
+    "title": "Compétences Techniques",
+    "allSkills": "Toutes les Compétences",
+    "categories": {
+      "language": "Langages",
+      "framework": "Frameworks & Bibliothèques",
+      "database": "Bases de données",
+      "tool": "Outils & Systèmes",
+      "cloud": "Cloud & Déploiement"
+    }
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "description": "N'hésitez pas à me contacter pour des collaborations, des opportunités ou simplement pour dire bonjour !",
+    "email": "Email",
+    "readyToStart": "Prêt à démarrer un projet ?",
+    "copyEmail": "Copier l'email",
+    "copied": "Copié !",
+    "connectOnSocial": "Connectez-vous sur les réseaux sociaux",
+    "followText": "Suivez-moi et connectons-nous sur ces plateformes",
+    "responseTime": "Je réponds généralement sous 24 à 48 heures."
+  },
+  "footer": {
+    "rights": "Tous droits réservés."
+  },
+  "workItem": {
+    "website": "Site Web",
+    "code": "Code",
+    "live": "Direct",
+    "readme": "README",
+    "learnMore": "En savoir plus",
+    "showLess": "Voir moins",
+    "showMore": "Voir plus",
+    "moreCount": "de plus"
+  }
+}

@@ -13,6 +13,7 @@
     "@types/three": "^0.181.0",
     "@vercel/analytics": "^1.5.0",
     "next": "16.0.5",
+    "next-intl": "^4.5.8",
     "puppeteer": "^24.32.0",
     "react": "19.2.0",
     "react-dom": "19.2.0",

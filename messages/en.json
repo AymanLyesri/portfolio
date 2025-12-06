@@ -1,0 +1,71 @@
+{
+  "nav": {
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact",
+    "portfolio": "Portfolio",
+    "viewSource": "View source",
+    "star": "Star",
+    "source": "Source"
+  },
+  "hero": {
+    "name": "Ayman Lyesri",
+    "title": "Software Engineer",
+    "subtitle": "Full-Stack & Mobile Developer",
+    "tagline": "Crafting clean interfaces and scalable backend systems",
+    "getInTouch": "Get In Touch",
+    "viewProjects": "View Projects"
+  },
+  "about": {
+    "title": "About Me",
+    "bio": "I'm a software engineer who enjoys building things that feel fast, intuitive, and reliable. Over the years, I've worked across mobile, frontend, and backend development—creating cross-platform apps with React Native, designing Angular dashboards, and building REST APIs and full-stack projects with TypeScript, Node.js, and Python. I've had the chance to work with teams in France and Morocco, contributing to Agile sprints, improving performance, integrating backend services, and delivering polished UI/UX across different platforms. On the freelance side, I've built custom applications for clients worldwide and maintained a consistent record of high ratings and strong communication. A big part of my journey is open source. I enjoy crafting tools, widgets, and Linux configurations that help developers customize their workflow—some of which are widely used in the community. I'm always exploring new technologies, optimizing how things work under the hood, and pushing myself to build better, cleaner systems. At the end of the day, I'm driven by solving real problems, creating smooth user experiences, and learning something new with every project."
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "highlights": "Key Achievements"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "viewGithub": "View on GitHub",
+    "viewLive": "Live Demo",
+    "viewReadme": "View README",
+    "loading": "Loading project details..."
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "allSkills": "All Skills",
+    "categories": {
+      "language": "Languages",
+      "framework": "Frameworks & Libraries",
+      "database": "Databases",
+      "tool": "Tools & Systems",
+      "cloud": "Cloud & Deployment"
+    }
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "description": "Feel free to reach out for collaborations, opportunities, or just to say hello!",
+    "email": "Email",
+    "readyToStart": "Ready to Start a Project?",
+    "copyEmail": "Copy Email",
+    "copied": "Copied!",
+    "connectOnSocial": "Connect on Social Media",
+    "followText": "Follow me and let's connect on these platforms",
+    "responseTime": "I typically respond within 24-48 hours."
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  },
+  "workItem": {
+    "website": "Website",
+    "code": "Code",
+    "live": "Live",
+    "readme": "README",
+    "learnMore": "Learn More",
+    "showLess": "Show Less",
+    "showMore": "Show More",
+    "moreCount": "more"
+  }
+}
