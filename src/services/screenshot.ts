@@ -58,11 +58,21 @@ export async function takeScreenshot(
     try {
       // Launch browser with Chromium for serverless
       console.log("[Screenshot] Launching browser...");
+
+      const executablePath = await chromium.executablePath("/tmp/chromium");
+      console.log("[Screenshot] Chromium executable path:", executablePath);
+
       browser = await puppeteer.launch({
-        args: chromium.args,
+        args: [
+          ...chromium.args,
+          "--disable-web-security",
+          "--disable-features=IsolateOrigins,site-per-process",
+          "--single-process",
+        ],
         defaultViewport: chromium.defaultViewport,
-        executablePath: await chromium.executablePath(),
+        executablePath,
         headless: chromium.headless,
+        ignoreHTTPSErrors: true,
       });
       console.log("[Screenshot] Browser initialized");
 
@@ -108,16 +118,26 @@ export async function takeScreenshot(
       return screenshot as Buffer;
     } catch (error) {
       const errorMsg = error instanceof Error ? error.message : String(error);
+      const errorStack = error instanceof Error ? error.stack : "";
       console.error(`[Screenshot] Attempt ${attempt + 1} failed:`, errorMsg);
+      console.error(`[Screenshot] Error stack:`, errorStack);
 
       if (page) {
-        await page.close();
-        console.log("[Screenshot] Page closed after error");
+        try {
+          await page.close();
+          console.log("[Screenshot] Page closed after error");
+        } catch (closeError) {
+          console.error("[Screenshot] Error closing page:", closeError);
+        }
       }
 
       if (browser) {
-        await browser.close();
-        console.log("[Screenshot] Browser closed after error");
+        try {
+          await browser.close();
+          console.log("[Screenshot] Browser closed after error");
+        } catch (closeError) {
+          console.error("[Screenshot] Error closing browser:", closeError);
+        }
       }
 
       // If this is a timeout and we have retries left, try again
