@@ -72,7 +72,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <head>
-        <script src="http://donations-aymanlyesri.vercel.app/widget.js"></script>
+        <script src="https://donations-aymanlyesri.vercel.app/widget.js"></script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
