@@ -163,7 +163,7 @@ export const portfolioDataEn: PortfolioData = {
         "A cryptocurrency dashboard built with Next.js and React, featuring real-time prices, charts, and a clean UI.",
       technologies: ["Next.js", "React", "TypeScript"],
       githubUrl: "https://github.com/AymanLyesri/CryptoSpy",
-      liveUrl: "http://crypto-spy-io.vercel.app/",
+      liveUrl: "https://crypto-spy-io.vercel.app/",
       highlights: ["Modern UI with charts", "Real-time market data"],
     },
     {

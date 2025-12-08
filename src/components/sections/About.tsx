@@ -34,15 +34,33 @@ export default function About() {
 
   return (
     <section id="about" className="py-20 px-6 flex justify-center">
-      <div className="w-full max-w-4xl">
+      <div className="w-full max-w-6xl">
         <AnimatedSection>
           <SectionHeader title={t("title")} subtitle="" />
         </AnimatedSection>
 
-        <AnimatedSection delay={200}>
+        <AnimatedSection
+          className="flex flex-col md:flex-row gap-6 md:gap-0"
+          delay={200}
+        >
+          <div className="w-full md:w-69 self-stretch overflow-hidden">
+            <img
+              src="https://avatars.githubusercontent.com/u/80812811?v=4"
+              alt="Profile"
+              className="h-full w-full object-cover object-center rounded-lg md:rounded-l-lg md:rounded-r-none"
+              style={{
+                maskImage:
+                  "linear-gradient(to bottom, transparent 0%, black 20%, black 100%) md:linear-gradient(to right, transparent 0%, black 40%, black 100%)",
+                WebkitMaskImage:
+                  "linear-gradient(to bottom, transparent 0%, black 20%, black 100%) md:linear-gradient(to right, transparent 0%, black 40%, black 100%)",
+              }}
+            />
+          </div>
           <div
             ref={cardRef}
-            className="group relative bg-black/40 backdrop-blur-sm border border-white/10 rounded-lg p-10 hover:border-white/30 hover:bg-black/60 transition-all duration-300 overflow-hidden"
+            className="rounded-lg md:rounded-l-none group relative bg-black/40 backdrop-blur-sm
+               border border-white/10 rounded-lg p-6 md:p-10 hover:border-white/30
+               hover:bg-black/60 transition-all duration-300 flex-1"
           >
             {/* Spotlight effect */}
             <div

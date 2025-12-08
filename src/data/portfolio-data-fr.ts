@@ -163,7 +163,7 @@ export const portfolioDataFr: PortfolioData = {
         "Un tableau de bord de cryptomonnaies construit avec Next.js et React, avec des prix en temps réel, des graphiques et une interface élégante.",
       technologies: ["Next.js", "React", "TypeScript"],
       githubUrl: "https://github.com/AymanLyesri/CryptoSpy",
-      liveUrl: "http://crypto-spy-io.vercel.app/",
+      liveUrl: "https://crypto-spy-io.vercel.app/",
       highlights: [
         "Interface moderne avec graphiques",
         "Données de marché en temps réel",
