@@ -14,7 +14,6 @@ export const portfolioDataEn: PortfolioData = {
 
   experiences: [
     {
-      id: "exp-1",
       title: "React Native & Node.js Developer",
       organization: "VNB-IT, France",
       date: "2025",
@@ -46,7 +45,6 @@ export const portfolioDataEn: PortfolioData = {
       ],
     },
     {
-      id: "exp-2",
       title: "Angular Developer",
       organization: "E-AMBITION, Rabat",
       date: "2023",
@@ -69,7 +67,6 @@ export const portfolioDataEn: PortfolioData = {
       ],
     },
     {
-      id: "exp-3",
       title: "Full-Stack & Mobile Developer (Freelance)",
       organization: "Fiverr & Independent",
       date: "2021 - 2024",
@@ -115,7 +112,6 @@ export const portfolioDataEn: PortfolioData = {
       ],
     },
     {
-      id: "exp-4",
       title: "Software Developer (Personal Projects)",
       organization: "GitHub",
       date: "2021 - 2025",
@@ -141,10 +137,9 @@ export const portfolioDataEn: PortfolioData = {
 
   projects: [
     {
-      id: "proj-1",
       title: "Hyprland Config & GTK Widgets",
       organization: "Open Source",
-      date: "2024",
+      date: "2025",
       description:
         "A complete Hyprland configuration with custom GTK/TS widgets, wallpapers, automation scripts, and a polished Linux UX.",
       technologies: ["TypeScript", "GTK", "Bash", "Linux"],
@@ -155,10 +150,9 @@ export const portfolioDataEn: PortfolioData = {
       ],
     },
     {
-      id: "proj-2",
       title: "CryptoSpy",
       organization: "Personal Project",
-      date: "2024",
+      date: "2025",
       description:
         "A cryptocurrency dashboard built with Next.js and React, featuring real-time prices, charts, and a clean UI.",
       technologies: ["Next.js", "React", "TypeScript"],
@@ -167,7 +161,29 @@ export const portfolioDataEn: PortfolioData = {
       highlights: ["Modern UI with charts", "Real-time market data"],
     },
     {
-      id: "proj-3",
+      title: "MangaUniversal",
+      organization: "Open Source",
+      date: "2025",
+      description:
+        "A cross-platform manga reader app built with Angular and Java Spring Boot, integrating with the MangaDex API for a seamless reading experience.",
+      technologies: [
+        "Angular",
+        "TypeScript",
+        "Tailwind",
+        "Java",
+        "Spring Boot",
+        "Docker",
+        "MangaDex API",
+      ],
+      githubUrl: "https://github.com/AymanLyesri/MangaUniversal",
+      liveUrl: "https://mangauniversal.vercel.app/",
+      highlights: [
+        "Cross-platform support (web & mobile)",
+        "Clean, responsive UI with Tailwind CSS",
+        "Integrated with MangaDex API for extensive manga library",
+      ],
+    },
+    {
       title: "Car Rental Platform (Frontend)",
       organization: "Open Source",
       date: "2024",
@@ -179,7 +195,6 @@ export const portfolioDataEn: PortfolioData = {
       highlights: ["Fully responsive UI", "Smooth filtering & browsing"],
     },
     {
-      id: "proj-4",
       title: "Image Viewer Gallery",
       organization: "Open Source",
       date: "2023",
@@ -191,7 +206,6 @@ export const portfolioDataEn: PortfolioData = {
       highlights: ["Lightweight and super fast", "Intuitive UI"],
     },
     {
-      id: "proj-5",
       title: "AI Profiler",
       organization: "Open Source",
       date: "2023",
@@ -202,7 +216,6 @@ export const portfolioDataEn: PortfolioData = {
       highlights: ["Smart code analysis", "Integrates with AI models"],
     },
     {
-      id: "proj-6",
       title: "Linux Chat Bot",
       organization: "Open Source",
       date: "2023",

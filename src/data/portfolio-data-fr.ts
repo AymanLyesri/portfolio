@@ -14,7 +14,6 @@ export const portfolioDataFr: PortfolioData = {
 
   experiences: [
     {
-      id: "exp-1",
       title: "Développeur React Native & Node.js",
       organization: "VNB-IT, France",
       date: "2025",
@@ -46,7 +45,6 @@ export const portfolioDataFr: PortfolioData = {
       ],
     },
     {
-      id: "exp-2",
       title: "Développeur Angular",
       organization: "E-AMBITION, Rabat",
       date: "2023",
@@ -69,7 +67,6 @@ export const portfolioDataFr: PortfolioData = {
       ],
     },
     {
-      id: "exp-3",
       title: "Développeur Full-Stack & Mobile (Freelance)",
       organization: "Fiverr & Indépendant",
       date: "2021 - 2024",
@@ -115,7 +112,6 @@ export const portfolioDataFr: PortfolioData = {
       ],
     },
     {
-      id: "exp-4",
       title: "Développeur Logiciel (Projets Personnels)",
       organization: "GitHub",
       date: "2021 - 2025",
@@ -141,10 +137,9 @@ export const portfolioDataFr: PortfolioData = {
 
   projects: [
     {
-      id: "proj-1",
       title: "Configuration Hyprland & Widgets GTK",
       organization: "Open Source",
-      date: "2024",
+      date: "2025",
       description:
         "Une configuration Hyprland complète avec des widgets GTK/TS personnalisés, des fonds d'écran, des scripts d'automatisation et une UX Linux soignée.",
       technologies: ["TypeScript", "GTK", "Bash", "Linux"],
@@ -155,10 +150,9 @@ export const portfolioDataFr: PortfolioData = {
       ],
     },
     {
-      id: "proj-2",
       title: "CryptoSpy",
       organization: "Projet Personnel",
-      date: "2024",
+      date: "2025",
       description:
         "Un tableau de bord de cryptomonnaies construit avec Next.js et React, avec des prix en temps réel, des graphiques et une interface élégante.",
       technologies: ["Next.js", "React", "TypeScript"],
@@ -170,7 +164,28 @@ export const portfolioDataFr: PortfolioData = {
       ],
     },
     {
-      id: "proj-3",
+      title: "MangaUniversal",
+      organization: "Open Source",
+      date: "2025",
+      description:
+        "Une application web de lecture de mangas construite avec Angular et Java Spring Boot, intégrant l'API MangaDex pour une expérience de lecture fluide.",
+      technologies: [
+        "Angular",
+        "TypeScript",
+        "Tailwind",
+        "Java",
+        "Spring Boot",
+        "Docker",
+        "MangaDex API",
+      ],
+      githubUrl: "https://github.com/AymanLyesri/MangaUniversal",
+      liveUrl: "https://mangauniversal.vercel.app/",
+      highlights: [
+        "Intégration complète avec l'API MangaDex",
+        "Interface utilisateur élégante et responsive",
+      ],
+    },
+    {
       title: "Plateforme de Location de Voitures (Frontend)",
       organization: "Open Source",
       date: "2024",
@@ -185,7 +200,6 @@ export const portfolioDataFr: PortfolioData = {
       ],
     },
     {
-      id: "proj-4",
       title: "Galerie de Visionneuse d'Images",
       organization: "Open Source",
       date: "2023",
@@ -197,7 +211,6 @@ export const portfolioDataFr: PortfolioData = {
       highlights: ["Léger et ultra rapide", "Interface intuitive"],
     },
     {
-      id: "proj-5",
       title: "AI Profiler",
       organization: "Open Source",
       date: "2023",
@@ -211,7 +224,6 @@ export const portfolioDataFr: PortfolioData = {
       ],
     },
     {
-      id: "proj-6",
       title: "Chatbot Linux",
       organization: "Open Source",
       date: "2023",
