@@ -90,7 +90,7 @@ export default function Projects({ projects }: ProjectsProps) {
           columnClassName="pl-6 bg-clip-padding"
         >
           {enrichedProjects.map((project, index) => (
-            <div key={project.id} className="mb-6">
+            <div className="mb-6">
               <AnimatedSection delay={index * 100}>
                 <WorkItemCard item={project} type="project" />
               </AnimatedSection>

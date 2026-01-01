@@ -20,7 +20,7 @@ export default function Experience({ experiences }: ExperienceProps) {
 
         <div className="space-y-6 flex flex-col gap-6">
           {experiences.map((exp, index) => (
-            <AnimatedSection key={exp.id} delay={index * 100}>
+            <AnimatedSection delay={index * 100}>
               <WorkItemCard item={exp} type="experience" />
             </AnimatedSection>
           ))}
